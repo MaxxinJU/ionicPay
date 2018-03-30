@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.tg.app.plugin.geocoder"
+    version="5.3.0">
+    <name>tgAppGeocoderPlugin</name>
+
+    <js-module src="www/geocoder.js" name="geocoder.js">
+        <clobbers target="navigator.geocoder" />
+    </js-module>
+
+
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CDVGeocoder">
+                <param name="ios-package" value="CDVGeocoder"/>
+                <param name="onload" value="true" />
+            </feature>
+
+        </config-file>
+        <header-file src="src/ios/CDVGeocoder.h" />
+        <source-file src="src/ios/CDVGeocoder.m" />
+    </platform>
+
+ </plugin>

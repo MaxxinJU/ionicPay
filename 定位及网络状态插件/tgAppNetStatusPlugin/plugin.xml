@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.tg.app.plugin.netStatus"
+    version="5.3.0">
+    <name>tgAppNetStatusPlugin</name>
+
+    <js-module src="www/netStatus.js" name="netStatus.js">
+        <clobbers target="navigator.netStatus" />
+    </js-module>
+
+
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CDVNetStatus">
+                <param name="ios-package" value="CDVNetStatus"/>
+                <param name="onload" value="true" />
+            </feature>
+
+        </config-file>
+        <header-file src="src/ios/CDVNetStatus.h" />
+        <source-file src="src/ios/CDVNetStatus.m" />
+    </platform>
+
+ </plugin>
